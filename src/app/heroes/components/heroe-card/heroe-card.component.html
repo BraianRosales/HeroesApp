@@ -1,0 +1,32 @@
+<mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title class="name-character">{{
+        heroe.superhero
+      }}</mat-card-title>
+      <mat-card-subtitle>{{ heroe.id }}</mat-card-subtitle>
+    </mat-card-header>
+    <img
+      mat-card-image
+      src="assets/heroes/{{ heroe.id }}.jpg"
+      alt="Photo of heroe"
+    />
+    <mat-card-content>
+      <ul>
+        <li>
+          <span class="title-li">Personajes:</span> {{ heroe.characters }}
+        </li>
+        <li>
+          <span class="title-li">Primer aparicion:</span>
+          {{ heroe.first_appearance }}
+        </li>
+        <li>
+          <span class="title-li">Nombre pj:</span> {{ heroe.alter_ego }}
+        </li>
+      </ul>
+      <mat-divider></mat-divider>
+    </mat-card-content>
+    <mat-card-actions class="wrap-btn">
+      <button mat-button color="warn">Leer mas...</button>
+      <button mat-button>Editar</button>
+    </mat-card-actions>
+  </mat-card>
