@@ -1,46 +1,23 @@
 <mat-card class="card">
   <!-- FRONT -->
   <div class="face front">
-    <img
-      mat-card-image
-      src="assets/heroes/{{ heroe.id }}.jpg"
-      alt="Photo of heroe"
-    />
+    <img mat-card-image [src]="heroe | image" alt="Photo of heroe" />
   </div>
 
   <!-- BACK -->
   <div class="face back">
     <!-- Datos -->
-    <mat-card-content>
-      <mat-card-title class="name-character">
-        {{ heroe.superhero }}
-      </mat-card-title>
-      <mat-card-subtitle>
-        {{ heroe.id }}
-      </mat-card-subtitle>
-      <ul class="card-content">
-        <li>
-          <span class="title-li">Personajes:</span> {{ heroe.characters }}
-        </li>
-        <li>
-          <span class="title-li">Primer aparicion:</span>
-          {{ heroe.first_appearance }}
-        </li>
-        <li><span class="title-li">Nombre pj:</span> {{ heroe.alter_ego }}</li>
-      </ul>
-      <span class="title-li">Historia:</span>
-
-      <mat-card-content>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt illum
-        facilis deleniti molestias commodi, perspiciatis ex voluptatem
-        consectetur voluptatum est quos inventore. Eius dolore suscipit ex
-        distinctio error dignissimos accusamus?
-      </mat-card-content>
-    </mat-card-content>
+    <app-heroe-content-card [heroe]="heroe"></app-heroe-content-card>
   </div>
 </mat-card>
 <!-- botones -->
 <mat-card-actions class="wrap-btn">
-  <button mat-button color="warn" class="btn-color-read">Leer mas...</button>
-  <button mat-button class="btn-color-edit">Editar</button>
+  <button mat-button color="warn" class="btn-color-read">
+    <a [routerLink]="heroe.id | linkLeerMas" routerLinkActive="heroe.id"
+      >Leer mas...</a
+    >
+  </button>
+  <button mat-button class="btn-color-edit">
+    <a id="btn-editar" [routerLink]="heroe.id | linkEditar">Editar</a>
+  </button>
 </mat-card-actions>

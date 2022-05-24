@@ -1,0 +1,40 @@
+.title-li {
+  color: red;
+  font-size: 16px;
+}
+
+.wrap-btn {
+  display: block !important;
+  margin: 0px auto;
+}
+
+.mat-card-actions {
+  margin-left: 25px !important;
+}
+
+.name-character {
+  color: red;
+}
+
+.card-content {
+  height: 120px;
+}
+
+.btn-color-read {
+  background-color: black;
+}
+
+.btn-color-edit {
+  color: rgb(231 193 100);
+}
+
+.card {
+  position: relative;
+  width: 300px;
+  height: 515px;
+  cursor: col-resize;
+}
+
+.spacing {
+  margin-top: 100px;
+}

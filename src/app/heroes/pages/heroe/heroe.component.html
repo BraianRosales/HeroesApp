@@ -1,1 +1,21 @@
-<p>heroe works!</p>
+<mat-grid-list *ngIf="!heroe; else elseTemplate" cols="1" rowHeight="2:1">
+  <mat-grid-tile><mat-spinner></mat-spinner></mat-grid-tile>
+</mat-grid-list>
+
+<ng-template #elseTemplate>
+  <mat-grid-list cols="2" rowHeight="2:2">
+    <mat-grid-tile class="img-heroe2"
+      ><img
+        class="img-heroe"
+        mat-card-image
+        [src]="heroe | image"
+        alt="Photo of heroe"
+    /></mat-grid-tile>
+    <mat-grid-tile>
+      <app-heroe-content-card
+        class="card-content"
+        [heroe]="heroe"
+      ></app-heroe-content-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</ng-template>

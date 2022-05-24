@@ -90,3 +90,12 @@
 .mat-card:not([class*="mat-elevation-z"]) {
   box-shadow: none !important;
 }
+
+a {
+  text-decoration: none;
+  color: red;
+}
+
+#btn-editar {
+  color: darkturquoise;
+}
