@@ -12,6 +12,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ListComponent } from './pages/list/list.component';
 import { HeroeCardComponent } from './components/heroe-card/heroe-card.component';
 
+
 @NgModule({
   declarations: [
     AddComponent,

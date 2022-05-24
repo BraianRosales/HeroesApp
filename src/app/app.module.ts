@@ -6,10 +6,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ErrorPageComponent } from './shared/error-page/error-page.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import { HeroeCardComponent } from './components/heroe-card/heroe-card.component';
+import { HeroeCardComponent } from './heroes/components/heroe-card/heroe-card.component';
+
 
 @NgModule({
-  declarations: [AppComponent, ErrorPageComponent, HeroeCardComponent],
+  declarations: [AppComponent, ErrorPageComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
