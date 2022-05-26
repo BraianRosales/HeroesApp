@@ -1,5 +1,6 @@
-<h1>Buscador de heroes</h1>
+<h1>Encuentre su heroe</h1>
 <div>
+  <!-- search -->
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Buscar heroe...</mat-label>
     <input
@@ -16,10 +17,33 @@
       #auto="matAutocomplete"
       (optionSelected)="getSuggestions($event)"
     >
-      <mat-option *ngFor="let heroe of lsHeroes" [value]="heroe">
-        {{ heroe.superhero }}
-      </mat-option>
+      <ng-container *ngIf="!sinHeroe; else elseTemplate">
+        <mat-option *ngFor="let heroe of lsHeroes" [value]="heroe">
+          {{ heroe.superhero }}
+        </mat-option>
+      </ng-container>
+      <ng-template #elseTemplate>
+        <mat-option> No existe el heroe</mat-option>
+      </ng-template>
     </mat-autocomplete>
   </mat-form-field>
 </div>
-<div>{{ heroeSelected | json }}</div>
+<!-- wrap of alert or heroe -->
+<ng-container *ngIf="!alert; else generateAlert">
+  <!-- Heroe -->
+  <div *ngIf="heroeSelected">
+    <mat-grid-list cols="2" rowHeight="2:1">
+      <mat-grid-tile>
+        <img [src]="heroeSelected | image" alt="" />
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <app-heroe-content-card
+          [heroe]="heroeSelected"
+        ></app-heroe-content-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</ng-container>
+<ng-template #generateAlert>
+  <div class="alert-warning">Heroe no existe!</div>
+</ng-template>

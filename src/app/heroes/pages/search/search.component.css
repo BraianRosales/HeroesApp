@@ -1,7 +1,32 @@
-.example-full-width{
-    width: 50em!important;
-    font-size: 18px!important;
+.example-full-width {
+  width: 50em !important;
+  font-size: 18px !important;
 }
-h1{
-    color: rgb(233, 51, 51);
+h1 {
+  color: rgb(233, 51, 51);
+}
+
+.alert-warning {
+  background-color: #f34646;
+  color: white;
+  height: 50px;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 20px;
+}
+
+.heroe {
+  width: 60%;
+  margin: 0px auto;
+  margin-top: 90px;
+}
+
+img {
+  height: 100%;
+  width: 50%;
+}
+
+.example-full-width {
+  margin-bottom: 50px;
 }

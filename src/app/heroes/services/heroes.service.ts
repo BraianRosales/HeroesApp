@@ -25,4 +25,8 @@ export class HeroesService {
       `${this._url}/heroes/?q=${txtHeroe}&_limit=6`
     );
   }
+
+  addHeroe(heroe: HeroesInterface): Observable<HeroesInterface> {
+    return this.http.post<HeroesInterface>(`${this._url}/heroes`,heroe);
+  }
 }

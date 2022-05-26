@@ -22,7 +22,6 @@ export class HeroeComponent implements OnInit {
       .pipe(switchMap(({ id }) => this._heroesService.getHeroeForId(id)))
       .subscribe((heroe) => {
         this.heroe = heroe;
-        console.log(heroe);
       });
   }
 }
