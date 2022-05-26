@@ -3,19 +3,15 @@
 </mat-grid-list>
 
 <ng-template #elseTemplate>
-  <mat-grid-list cols="2" rowHeight="2:2">
-    <mat-grid-tile class="img-heroe2"
-      ><img
-        class="img-heroe"
-        mat-card-image
-        [src]="heroe | image"
-        alt="Photo of heroe"
-    /></mat-grid-tile>
+  <mat-grid-list cols="2" rowHeight="1:1">
+    <!-- Grid image of the heroe -->
     <mat-grid-tile>
-      <app-heroe-content-card
-        class="card-content"
-        [heroe]="heroe"
-      ></app-heroe-content-card>
+      <img id="img-heroe" [src]="heroe | image" alt="Photo of heroe" />
+    </mat-grid-tile>
+    <!-- Grid data of the heroe-->
+    <mat-grid-tile>
+      <app-heroe-content-card class="card-content" [heroe]="heroe">
+      </app-heroe-content-card>
     </mat-grid-tile>
   </mat-grid-list>
 </ng-template>

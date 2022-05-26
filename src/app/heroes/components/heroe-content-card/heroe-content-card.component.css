@@ -16,10 +16,6 @@
   color: red;
 }
 
-.card-content {
-  height: 120px;
-}
-
 .btn-color-read {
   background-color: black;
 }
@@ -28,13 +24,11 @@
   color: rgb(231 193 100);
 }
 
-.card {
-  position: relative;
-  width: 300px;
-  height: 515px;
-  cursor: col-resize;
-}
-
 .spacing {
   margin-top: 100px;
+}
+
+.margin-t-b {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

@@ -17,6 +17,7 @@ import { ImagePipe } from './pipes/image.pipe';
 import { LinkPipe } from './pipes/link.pipe';
 import { LinkEditarPipe } from './pipes/link-editar.pipe';
 import { HeroeContentCardComponent } from './components/heroe-content-card/heroe-content-card.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { HeroeContentCardComponent } from './components/heroe-content-card/heroe
     MaterialModule,
     MatProgressSpinnerModule,
     MatGridListModule,
+    FormsModule
   ],
 })
 export class HeroesModule {}

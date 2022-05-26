@@ -1,10 +1,13 @@
-.img-heroe {
+.card-content {
+  position: absolute;
+  top: 30px;
+  left: 0px;
+  padding-right: 350px;
+}
+
+#img-heroe {
+  border-radius: 25px;
+  width: 75%;
   height: 100%;
 }
 
-.img-heroe2 {
-  border-radius: 25px;
-}
-.card-content {
-  margin-left: 40px !important;
-}

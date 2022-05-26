@@ -6,6 +6,7 @@
 .wrap-btn {
   display: block !important;
   margin: 0px auto;
+  margin-bottom: 25px;
 }
 
 .mat-card-actions {
