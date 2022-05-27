@@ -32,10 +32,12 @@
 <ng-container *ngIf="!alert; else generateAlert">
   <!-- Heroe -->
   <div *ngIf="heroeSelected">
-    <mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-list cols="2" rowHeight="2:2">
+      <!-- heroe image -->
       <mat-grid-tile>
         <img [src]="heroeSelected | image" alt="" />
       </mat-grid-tile>
+      <!-- heroe data -->
       <mat-grid-tile>
         <app-heroe-content-card
           [heroe]="heroeSelected"
@@ -44,6 +46,7 @@
     </mat-grid-list>
   </div>
 </ng-container>
+<!-- alert -->
 <ng-template #generateAlert>
   <div class="alert-warning">Heroe no existe!</div>
 </ng-template>

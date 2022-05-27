@@ -1,5 +1,4 @@
-<h1>Agregar héroe</h1>
-<mat-divider></mat-divider>
+<h1>{{titleView}}</h1>
 
 <!-- Formulario -->
 <div fxLayout="row" fxLayoutGap="40px" fxLayout.xs="column">
@@ -8,7 +7,7 @@
     <div fxLayoutGap="20px" fxLayout.xs="column" fxLayout="row">
       <mat-form-field fxFlex="50" fxLayout="column">
         <mat-label>Super Héroe</mat-label>
-        <input [(ngModel)]="heroe.superhero" matInput />
+        <input required [(ngModel)]="heroe.superhero" matInput />
       </mat-form-field>
       <mat-form-field fxFlex="50" fxLayout="column">
         <mat-label>Alter Ego</mat-label>
@@ -46,6 +45,6 @@
   </div>
   <!-- imagen lateral -->
   <div fxFlex="50" fxLayout="column">
-    <img src="heroe.alt_img | image" alt="Imagen del heroe" />
+    <img class="img" [src]="heroe | image" alt="Imagen del heroe" />
   </div>
 </div>

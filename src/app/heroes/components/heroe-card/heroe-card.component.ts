@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 import { HeroesInterface } from '../../interfaces/heroes.interface';
+import { HeroesService } from '../../services/heroes.service';
 
 @Component({
   selector: 'app-heroe-card',
@@ -7,10 +9,28 @@ import { HeroesInterface } from '../../interfaces/heroes.interface';
   styleUrls: ['./heroe-card.component.css'],
 })
 export class HeroeCardComponent implements OnInit {
-
   @Input() heroe!: HeroesInterface;
 
-  constructor() {}
+  constructor(private HeroesService: HeroesService) {}
 
   ngOnInit(): void {}
+
+  deleteHeroe() {
+    Swal.fire({
+      background: 'slategrey',
+      color: 'white',
+      title: '¿Estás segur@?',
+      text: 'Perdera el héroe en su base de datos.',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: 'black',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Eliminar héroe!',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.HeroesService.removeHeroe(this.heroe).subscribe();
+        Swal.fire('Eliminado', 'Se elimino su regístro.', 'success');
+      }
+    });
+  }
 }

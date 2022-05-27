@@ -20,4 +20,5 @@
   <button mat-button class="btn-color-edit">
     <a id="btn-editar" [routerLink]="heroe.id | linkEditar">Editar</a>
   </button>
+  <button (click)="deleteHeroe()" mat-raised-button color="warn">Eliminar</button>
 </mat-card-actions>

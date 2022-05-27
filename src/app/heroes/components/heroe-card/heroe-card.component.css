@@ -10,7 +10,7 @@
 }
 
 .mat-card-actions {
-  margin-left: 25px !important;
+  margin-left: 10px !important;
 }
 
 .name-character {
@@ -40,6 +40,11 @@
   margin-top: 100px;
 }
 
+img{
+  width: 110%;
+  height: 110%;
+}
+
 /* Card giratoria */
 
 .card .face {
@@ -65,7 +70,7 @@
 
 .card .back {
   transform: perspective(600px) rotateY(180deg);
-  width: 80%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

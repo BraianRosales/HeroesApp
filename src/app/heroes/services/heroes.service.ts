@@ -27,6 +27,17 @@ export class HeroesService {
   }
 
   addHeroe(heroe: HeroesInterface): Observable<HeroesInterface> {
-    return this.http.post<HeroesInterface>(`${this._url}/heroes`,heroe);
+    return this.http.post<HeroesInterface>(`${this._url}/heroes`, heroe);
+  }
+
+  editHeroe(heroe: HeroesInterface): Observable<HeroesInterface> {
+    return this.http.put<HeroesInterface>(
+      `${this._url}/heroes/${heroe.id}`,
+      heroe
+    );
+  }
+
+  removeHeroe(heroe: HeroesInterface): Observable<HeroesInterface> {
+    return this.http.delete<HeroesInterface>(`${this._url}/heroes/${heroe.id}`);
   }
 }
