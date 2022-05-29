@@ -1,9 +1,15 @@
 h1 {
   margin-bottom: 60px;
+  color: rgb(194, 133, 255);
 }
 
 img {
-  width: 95%;
-  height: 75%;
+  width: 100%;
+  height: 100%;
   border-radius: 5px;
+}
+
+.img-content {
+  max-width: 30% !important;
+  height: 46em !important;
 }

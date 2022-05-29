@@ -3,6 +3,7 @@ import { HeroesInterface, Publisher } from '../../interfaces/heroes.interface';
 import { HeroesService } from '../../services/heroes.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap } from 'rxjs';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add',
@@ -10,7 +11,6 @@ import { switchMap } from 'rxjs';
   styleUrls: ['./add.component.css'],
 })
 export class AddComponent implements OnInit {
-  public titleView: string = 'Agregar nuevo héroe';
 
   public creators = [
     {
@@ -41,14 +41,10 @@ export class AddComponent implements OnInit {
   ngOnInit(): void {
     if (this.router.url.includes('editar')) {
       this.ActivatedRoute.params
-      .pipe(switchMap(({ id }) => this._heroesService.getHeroeForId(id)))
-      .subscribe((heroe) => {
-        console.log(heroe.id);
-        this.heroe = heroe;
-        if (this.heroe.id) {
-          this.titleView = 'Actualizar héroe';
-        }
-      });
+        .pipe(switchMap(({ id }) => this._heroesService.getHeroeForId(id)))
+        .subscribe((heroe) => {
+          this.heroe = heroe;
+        });
     }
   }
 
@@ -58,16 +54,30 @@ export class AddComponent implements OnInit {
     }
     if (this.heroe.id) {
       console.log('Heroe editado');
-      this._heroesService
-        .editHeroe(this.heroe)
-        .subscribe();
+      this._heroesService.editHeroe(this.heroe).subscribe();
     } else {
       console.log('Heroe agregado');
-      this._heroesService
-        .addHeroe(this.heroe)
-        .subscribe((heroe) =>
-          this.router.navigate([`/heroes/editar/${heroe.id}`])
-        );
+      this._heroesService.addHeroe(this.heroe).subscribe((heroe) => {
+        this.router.navigate([`/heroes/editar/${heroe.id}`]);
+        // alerta
+        const Toast = Swal.mixin({
+          toast: true,
+          position: 'top-end',
+          showConfirmButton: false,
+          timer: 3000,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer);
+            toast.addEventListener('mouseleave', Swal.resumeTimer);
+          },
+        });
+        Toast.fire({
+          icon: 'success',
+          title: 'Héroe guardado!',
+          background: 'white',
+          color: 'green',
+        });
+      });
     }
   }
 }

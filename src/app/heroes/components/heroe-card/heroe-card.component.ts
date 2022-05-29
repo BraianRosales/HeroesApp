@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import Swal from 'sweetalert2';
 import { HeroesInterface } from '../../interfaces/heroes.interface';
 import { HeroesService } from '../../services/heroes.service';
@@ -11,7 +13,7 @@ import { HeroesService } from '../../services/heroes.service';
 export class HeroeCardComponent implements OnInit {
   @Input() heroe!: HeroesInterface;
 
-  constructor(private HeroesService: HeroesService) {}
+  constructor(private HeroesService: HeroesService, private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -29,7 +31,12 @@ export class HeroeCardComponent implements OnInit {
     }).then((result) => {
       if (result.isConfirmed) {
         this.HeroesService.removeHeroe(this.heroe).subscribe();
-        Swal.fire('Eliminado', 'Se elimino su regístro.', 'success');
+        Swal.fire({
+          background: 'black',
+          color: 'white',
+          title: 'Héroe eliminado',
+          icon: 'success',
+        });
       }
     });
   }

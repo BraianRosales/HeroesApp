@@ -1,4 +1,4 @@
-<h1>{{titleView}}</h1>
+<h1>{{ heroe.id ? "Actualizar heroe" : "Agregar héroe" }}</h1>
 
 <!-- Formulario -->
 <div fxLayout="row" fxLayoutGap="40px" fxLayout.xs="column">
@@ -44,7 +44,7 @@
     </button>
   </div>
   <!-- imagen lateral -->
-  <div fxFlex="50" fxLayout="column">
+  <div fxFlex="50" fxLayout="column" class="img-content">
     <img class="img" [src]="heroe | image" alt="Imagen del heroe" />
   </div>
 </div>
