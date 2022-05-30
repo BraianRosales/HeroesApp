@@ -1,5 +1,29 @@
-<div class="form">
-  <div class="btn-wrap">
-    <button (click)="login()" mat-raised-button color="primary">Ingresar</button>
+<form class="form" (ngSubmit)="validate()">
+  <div class="wrap-input">
+    <h1>HeroesApp</h1>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Nombre usuario</mat-label>
+      <input
+        name="userNameInput"
+        [(ngModel)]="userNameInput"
+        matInput
+        required
+      />
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Contraseña</mat-label>
+      <input
+        type="password"
+        name="userPassInput"
+        [(ngModel)]="userPassInput"
+        matInput
+        required
+      />
+    </mat-form-field>
   </div>
-</div>
+
+  <div class="alert" *ngIf="alert">Usuario o contraseña incorrectos.</div>
+  <div class="btn-wrap">
+    <button (click)="login()" mat-raised-button>Ingresar</button>
+  </div>
+</form>
