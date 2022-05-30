@@ -40,7 +40,8 @@
     </button>
 
     <div class="spacer"></div>
-    <button mat-button class="btn-logout">Logout</button>
+    <div id="userName">{{userName}}</div>
+    <button (click)="logout()" mat-button class="btn-logout">Logout</button>
   </mat-toolbar>
 
   <div class="container">

@@ -1,6 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Subscription } from 'rxjs';
 import Swal from 'sweetalert2';
 import { HeroesInterface } from '../../interfaces/heroes.interface';
 import { HeroesService } from '../../services/heroes.service';
@@ -13,7 +11,7 @@ import { HeroesService } from '../../services/heroes.service';
 export class HeroeCardComponent implements OnInit {
   @Input() heroe!: HeroesInterface;
 
-  constructor(private HeroesService: HeroesService, private router: Router) {}
+  constructor(private HeroesService: HeroesService) {}
 
   ngOnInit(): void {}
 

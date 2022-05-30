@@ -24,9 +24,8 @@ export class ListComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.suscription.unsubscribe();
-    console.log('Se ejecuto ngOnDestroy: Observable cerrado.');
+    console.log('ngOnDestroy: Observable cerrado.');
   }
-
 
   getHeroes(): void {
     this.heroesService.getHeroes().subscribe((res) => {
