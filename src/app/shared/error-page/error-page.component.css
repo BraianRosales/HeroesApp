@@ -1,0 +1,19 @@
+
+.alert{
+    padding-left: 20px;
+    font-size: 20px;
+    font-weight: 500;
+    color: red;
+    background-color: #ffbcb4;
+    line-height: 50px;
+  }
+
+  ul li{
+      color: white;
+  }
+
+  ul li a{
+      font-size: 20px;
+      text-decoration: none;
+      color: red;
+  }
